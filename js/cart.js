@@ -109,10 +109,25 @@ function updateCartDisplay() {
     if (!cartDOM.itemsContainer) return;
 
     if (cart.length === 0) {
-        cartDOM.itemsContainer.innerHTML = '<p class="text-gray-600 text-center py-8">Your cart is empty</p>';
+        cartDOM.itemsContainer.innerHTML = `
+            <div class="text-center py-12">
+                <p class="text-gray-600 text-lg mb-4">🛒 Your cart is empty</p>
+                <p class="text-gray-500 text-sm mb-6">Add delicious protein bowls to get started</p>
+                <a href="menu.html" class="inline-block bg-primary-light text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary-hover transition">
+                    Browse Menu
+                </a>
+            </div>
+        `;
+    
         if (cartDOM.totalContainer) {
             cartDOM.totalContainer.textContent = '₹0';
         }
+
+        const proteinEl = document.getElementById("cart-protein");
+        if (proteinEl) {
+            proteinEl.innerText = "0g";
+        }
+
         return;
     }
 
@@ -165,6 +180,7 @@ function updateCartDisplay() {
     if (cartDOM.totalContainer) {
         cartDOM.totalContainer.textContent = `₹${totalPrice}`;
     }
+    updateCartSummary();
 }
 
 /**
@@ -242,3 +258,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function updateCartSummary() {
+    let total = 0;
+    let totalProtein = 0;
+
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        totalProtein += item.protein * item.quantity;
+    });
+
+    document.getElementById("cart-total").innerText = `₹${total}`;
+    const proteinEl = document.getElementById("cart-protein");
+if (proteinEl) {
+    proteinEl.innerText = `${totalProtein}g`;
+}
+}

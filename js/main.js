@@ -34,6 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
         appDOM.mobileMenuBtn.addEventListener('click', () => {
             appDOM.mobileMenu.classList.toggle('hidden');
         });
+        
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = appDOM.mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                appDOM.mobileMenu.classList.add('hidden');
+            });
+        });
     }
 });
 
@@ -50,29 +58,28 @@ function loadFeaturedProducts() {
     
     featured.forEach(product => {
         htmlBuilder += `
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition transform hover:scale-105">
-                <div class="aspect-square bg-gradient-to-br from-green-100 via-orange-100 to-pink-100 flex items-center justify-center text-5xl">
+            <div class="featured-item">
+                <div class="featured-icon">
                     ${product.icon}
                 </div>
-                <div class="p-4">
-                    <div class="inline-block bg-orange-100 text-orange-600 px-2 py-1 rounded text-xs font-bold mb-2">Popular</div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">${product.name}</h3>
-                    <p class="text-sm text-gray-600 mb-3">${product.description}</p>
-                    <div class="grid grid-cols-3 gap-2 mb-4 text-xs text-center">
-                        <div class="bg-green-50 p-2 rounded">
-                            <p class="font-bold text-green-600">${product.protein}g</p>
-                            <p class="text-gray-600">Protein</p>
+                <div class="featured-content">
+                    <h3 class="featured-name">${product.name}</h3>
+                    <p class="featured-desc">${product.description}</p>
+                    <div class="nutrition-grid">
+                        <div class="nutrition-item nutrition-protein">
+                            <span class="nutrition-value">${product.protein}g</span>
+                            <span class="nutrition-label">Protein</span>
                         </div>
-                        <div class="bg-orange-50 p-2 rounded">
-                            <p class="font-bold text-orange-600">${product.calories}</p>
-                            <p class="text-gray-600">Cal</p>
+                        <div class="nutrition-item nutrition-calories">
+                            <span class="nutrition-value">${product.calories}</span>
+                            <span class="nutrition-label">Cal</span>
                         </div>
-                        <div class="bg-purple-50 p-2 rounded">
-                            <p class="font-bold text-purple-600">₹${product.price}</p>
-                            <p class="text-gray-600">Price</p>
+                        <div class="nutrition-item nutrition-price">
+                            <span class="nutrition-value">₹${product.price}</span>
+                            <span class="nutrition-label">Price</span>
                         </div>
                     </div>
-                    <button class="w-full add-to-cart-btn bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition" data-product-id="${product.id}">
+                    <button class="add-to-cart-btn w-full text-white py-2 rounded-lg font-semibold transition btn-featured-add-to-cart" data-product-id="${product.id}">
                         Add to Cart
                     </button>
                 </div>
@@ -84,7 +91,7 @@ function loadFeaturedProducts() {
     appDOM.featuredProductsContainer.innerHTML = htmlBuilder;
 
     // Attach event listeners to add to cart buttons
-    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    document.querySelectorAll('#featured-products .add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const productId = e.target.dataset.productId;
             const product = getProductById(productId);
@@ -201,3 +208,28 @@ function trackEvent(eventName, eventData = {}) {
         gtag('event', eventName, eventData);
     }
 }
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("contact-name").value;
+    const email = document.getElementById("contact-email").value;
+    const phone = document.getElementById("contact-phone").value;
+    const message = document.getElementById("contact-message").value;
+
+    const whatsappMessage = `Hello Protein Pot 👋
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    const whatsappNumber = "919489472765";
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+    this.reset();
+});
