@@ -65,16 +65,30 @@
     <!-- Filters and Products -->
     <section class="py-12 section-alt">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-6 p-5 rounded-2xl bg-gradient-to-r from-green-100 to-emerald-50 border border-green-200 shadow-sm">
+    <p class="font-bold text-green-900 text-lg mb-1">🥣 New here?</p>
+    <p class="text-green-800 text-sm leading-relaxed">
+        Try our <span class="font-semibold">Trial Boxes</span> — perfect for first-time users to explore our menu.
+        <br>
+        🚚 <span class="font-semibold">Free delivery available only for Trial Boxes.</span>
+    </p>
+</div>
             <div class="flex flex-col md:flex-row gap-4 mb-8 justify-between items-start md:items-center">
                 <div class="flex gap-2 flex-wrap">
-                    <button class="filter-btn filter-active px-4 py-2 rounded-full border-2 font-medium text-primary-dark" data-filter="all">All</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border-2 font-medium text-muted border-gray-300" data-filter="normal">
-                        Normal
-                    </button>
+    <button class="filter-btn filter-active px-4 py-2 rounded-full border-2 font-medium text-primary-dark" data-filter="all">All</button>
 
-                    <button class="filter-btn px-4 py-2 rounded-full border-2 font-medium text-muted border-gray-300" data-filter="supreme">
-                        Supreme
-                    </button>
+    <button class="filter-btn px-4 py-2 rounded-full border-2 font-medium text-muted border-gray-300" data-filter="trial">
+        Trial Box
+    </button>
+
+    <button class="filter-btn px-4 py-2 rounded-full border-2 font-medium text-muted border-gray-300" data-filter="regular">
+        Regular
+    </button>
+
+    <button class="filter-btn px-4 py-2 rounded-full border-2 font-medium text-muted border-gray-300" data-filter="supreme">
+        Supreme
+    </button>
+</div>
                 </div>
             </div>
 
@@ -219,15 +233,21 @@
                     if (filter === 'all') {
     renderProducts(allProducts);
 } 
-else if (filter === 'normal') {
+else if (filter === 'regular') {
     const filtered = allProducts.filter(p => 
-        p.name.toLowerCase().includes('normal')
+        p.name.toLowerCase().includes('regular')
     );
     renderProducts(filtered);
 } 
 else if (filter === 'supreme') {
     const filtered = allProducts.filter(p => 
         p.name.toLowerCase().includes('supreme')
+    );
+    renderProducts(filtered);
+}
+else if (filter === 'trial') {
+    const filtered = allProducts.filter(p => 
+        p.name.toLowerCase().includes('trial')
     );
     renderProducts(filtered);
 }

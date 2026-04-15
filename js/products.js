@@ -1,105 +1,143 @@
 const allProducts = 
 [{
     id: '1',
-    name: 'Normal Weight Gain Pot',
+    name: 'Regular Weight Gain Pot',
     protein: 18,
     calories: 420,
-    price: 199,
+    price: 150,
     ingredients: ['Banana', 'Apple', 'Kiwi', 'Strawberry', 'Orange','Peanuts', 'Almonds', 'Sunflower seeds'],
     icon: '🍌',
-    description: 'Perfect for weight gain - calorie-rich blend'
 },
 
-  {
+{
     id: '2',
-    name: 'Normal Weight Loss Pot',
+    name: 'Regular Weight Loss Pot',
     protein: 15,
     calories: 280,
-    price: 189,
+    price: 150,
     ingredients: ['Kiwi', 'Apple', 'Orange', 'Cucumber', 'Almonds', 'Sunflower seeds'],
     icon: '🥝',
-    description: 'Low-calorie, high-protein, weight loss focused'
-  },
-  {
+},
+{
     id: '3',
     name: 'Supreme Weight Gain Pot',
     protein: 22,
     calories: 520,
-    price: 249,
+    price: 200,
     ingredients: ['Avocado', 'Pomegranate', 'Kiwi', 'Strawberry', 'Water apple', 'Almonds', 'Pumpkin seeds', 'Sunflower seeds'],
     icon: '🥑',
-    description: 'Premium calorie-dense blend with superfoods'
-  },
-  {
+},
+{
     id: '4',
     name: 'Supreme Weight Loss Pot',
     protein: 20,
     calories: 320,
-    price: 239,
+    price: 200,
     ingredients: ['Avocado', 'Strawberry', 'Kiwi', 'Water apple', 'Pumpkin seeds', 'Almonds'],
     icon: '🍓',
-    description: 'Premium low-calorie with healthy fats'
-  },
-  {
+},
+{
     id: '5',
-    name: 'Normal Oldage Home Pot',
+    name: 'Regular Oldage Home Pot',
     protein: 12,
     calories: 300,
-    price: 179,
+    price: 150,
     ingredients: ['Apple', 'Papaya', 'Orange', 'Banana', 'Cucumber', 'Almonds', 'Sunflower seeds'],
     icon: '🍎',
-    description: 'Easy digestion, senior-friendly nutrition'
-  },
-  {
+},
+{
     id: '6',
     name: 'Supreme Oldage Home Pot',
     protein: 14,
     calories: 380,
-    price: 229,
+    price: 200,
     ingredients: ['Avocado', 'Guava', 'Kiwi', 'Strawberry', 'Apple'],
     icon: '🍏',
-    description: 'Premium senior nutrition with antioxidants'
-  },
-  {
+},
+{
     id: '7',
-    name: 'Normal Diabetic Pot',
+    name: 'Regular Diabetic Pot',
     protein: 16,
     calories: 240,
-    price: 209,
+    price: 150,
     ingredients: ['Apple', 'Kiwi', 'Strawberry', 'Cucumber', 'Orange', 'Pear', 'Almonds', 'Sunflower seeds'],
     icon: '🍐',
-    description: '70% Low sugar fruits, 20% Cucumber / fiber, 10% nuts'
-  },
-  {
+},
+{
     id: '8',
     name: 'Supreme Diabetic Pot',
     protein: 19,
     calories: 300,
-    price: 259,
+    price: 200,
     ingredients: ['Avocado', 'Guava', 'Kiwi', 'Strawberry', 'Green apple', 'Almonds', 'Pumpkin seeds', 'Sunflower seeds', 'Pista'],
     icon: '🥑',
-    description: '70% Low sugar fruits, 20% Cucumber / fiber, 10% nuts'
-  },
-  {
+},
+{
     id: '9',
-    name: 'Normal IT Menu Pot',
+    name: 'Regular IT Menu Pot',
     protein: 17,
     calories: 380,
-    price: 199,
+    price: 150,
     ingredients: ['Watermelon', 'Cucumber', 'Orange', 'Papaya', 'Muskmelon', 'Water apple', 'Peanuts', 'Almonds'],
     icon: '🍉',
-    description: 'Hydrating, energy-boosting office meal'
-  },
-  {
+},
+{
     id: '10',
     name: 'Supreme IT Menu Pot',
     protein: 21,
     calories: 450,
-    price: 249,
+    price: 200,
     ingredients: ['Dragon fruit', 'Strawberry', 'Kiwi', 'Watermelon', 'Pineapple', 'Water apple', 'Almonds', 'Pista', 'Pumpkin seeds', 'Sunflower seeds'],
     icon: '🍍',
-    description: 'Premium superfruit blend for peak performance'
-  }
+},
+
+// ===== TRIAL BOX =====
+
+{
+    id: '11',
+    name: 'Trial Weight Gain Pot',
+    protein: 12,
+    calories: 300,
+    price: 120,
+    ingredients: ['Banana', 'Apple', 'Peanuts'],
+    icon: '🍌',
+},
+{
+    id: '12',
+    name: 'Trial Weight Loss Pot',
+    protein: 10,
+    calories: 180,
+    price: 120,
+    ingredients: ['Kiwi', 'Apple', 'Cucumber'],
+    icon: '🥝',
+},
+{
+    id: '13',
+    name: 'Trial Oldage Home Pot',
+    protein: 8,
+    calories: 200,
+    price: 120,
+    ingredients: ['Apple', 'Papaya', 'Banana'],
+    icon: '🍎',
+},
+{
+    id: '14',
+    name: 'Trial Diabetic Pot',
+    protein: 11,
+    calories: 170,
+    price: 120,
+    ingredients: ['Apple', 'Kiwi', 'Cucumber'],
+    icon: '🍐',
+},
+{
+    id: '15',
+    name: 'Trial IT Menu Pot',
+    protein: 12,
+    calories: 260,
+    price: 120,
+    ingredients: ['Watermelon', 'Cucumber', 'Orange'],
+    icon: '🍉',
+}
 ];
 
 // Customization ingredients
