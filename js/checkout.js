@@ -140,7 +140,7 @@ Order Number: #${orderNumber}`;
  */
 function sendViaWhatsApp(orderData) {
     const message = buildWhatsAppMessage(orderData);
-    const whatsappNumber = '919489472765';
+    const whatsappNumber = '917871974777';
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     
     // Save order to localStorage before redirecting

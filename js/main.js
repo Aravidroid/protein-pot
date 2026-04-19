@@ -228,7 +228,7 @@ ${message}`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    const whatsappNumber = "919489472765";
+    const whatsappNumber = "917871974777";
 
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
     this.reset();
